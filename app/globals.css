@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+.flashHeader {
+  background: #ff00ff;
+  color: #00ff00;
+  text-align: center;
+  padding: 10px;
+  font-size: 42px;
+  font-weight: bold;
+  animation: flash 0.4s infinite;
+}
+
+@keyframes flash {
+  0% { background: #ff00ff; color: #00ff00; }
+  50% { background: #00ffff; color: #ff0000; }
+  100% { background: #ffff00; color: #0000ff; }
+}
+
+.badNav {
+  background: #000000;
+  padding: 5px;
+}
+
+.badNav a {
+  color: #ffff00;
+  margin-right: 5px;
+  font-size: 11px;
+  text-decoration: none;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  background: #ff00ff;
+}
+
+.glowBanner {
+  background: #00ff00;
+  color: #ff0000;
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  animation: glow 0.7s infinite alternate;
+}
+
+@keyframes glow {
+  from { transform: scale(1); filter: brightness(1); }
+  to { transform: scale(1.05); filter: brightness(2); }
+}
+
+.autoBanner {
+  width: 100%;
+  background: #ff6600;
+  color: #000000;
+  padding: 18px;
+  font-size: 26px;
+  text-align: center;
+  animation: rotatePromo 1s infinite;
+}
+
+@keyframes rotatePromo {
+  0% { background: #ff6600; }
+  33% { background: #00ffcc; }
+  66% { background: #ff00cc; }
+  100% { background: #ff6600; }
+}
+
+.promoPopup {
+  position: fixed;
+  top: 80px;
+  right: 30px;
+  width: 350px;
+  height: 250px;
+  background: #ffff00;
+  color: #ff0000;
+  z-index: 9999;
+  border: 8px solid #00ffff;
+  padding: 10px;
+  animation: bounce 0.5s infinite;
+}
+
+.promoPopup p {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.shakeBox {
+  background: #ff0000;
+  color: #ffffff;
+  padding: 15px;
+  margin: 20px;
+  animation: shake 0.2s infinite;
+  font-size: 24px;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
+}
+
+.allCaps {
+  font-size: 18px;
+  color: #ff00ff;
+  background: #00ff00;
+  padding: 10px;
+}
+
+.denseText {
+  font-size: 13px;
+  line-height: 14px;
+  width: 1000px;
+  background: #ffffff;
+  color: #000000;
+  padding: 5px;
+}
+
+.tinyText {
+  font-size: 10px;
+  line-height: 1.1;
+  background: #ffffff;
+  color: #000000;
+}
+
+.neonTitle {
+  color: #00ff00;
+  background: #ff00ff;
+}
+
+.redTitle {
+  color: #ff0000;
+}
+
+.fakeButton {
+  width: 25px;
+  height: 20px;
+  background: #0000ff;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 8px;
+  text-align: center;
+}
+
+.smallButton {
+  width: 32px;
+  height: 24px;
+  font-size: 9px;
+  background: #ff0000;
+  color: #ffffff;
+  border: none;
+}
+
+.badMedia {
+  width: 300px;
+  margin: 10px;
+  display: block;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.productCard {
+  background: #00ffff;
+  color: #ff0000;
+  border: 4px dashed #ff00ff;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 12px;
+  animation: pulse 0.6s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.badFooter {
+  background: #000000;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 5px;
+  text-align: center;
+}
