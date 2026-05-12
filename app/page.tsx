@@ -3,100 +3,110 @@ import "./globals.css";
 export default function Home() {
   return (
     <main>
-      <header className="flashHeader">
-        MEGA DEAL ZONE!!!
+      <header className="header">
+        <h1>Mega Deal Zone</h1>
+        <p className="subtitle">
+          Discover special offers in a calm and accessible experience.
+        </p>
       </header>
 
-      <nav className="badNav">
+      <nav className="nav" aria-label="Main navigation">
         <a href="#">Home</a>
-        <a href="#">Buy</a>
-        <a href="#">Sale</a>
-        <a href="#">Hot</a>
-        <a href="#">Now</a>
+        <a href="#">Shop</a>
+        <a href="#">Deals</a>
+        <a href="#">Trending</a>
+        <a href="#">New Arrivals</a>
       </nav>
 
-      <section className="glowBanner">
-        FLASH SALE FLASH SALE FLASH SALE - BUY NOW!!!
-      </section>
-
-      <section className="autoBanner">
-        LIMITED TIME PROMOTION CHANGING FAST!!!
-      </section>
-
-      <div className="promoPopup">
-        <h2>UNEXPECTED POPUP!!!</h2>
+      <section className="banner" aria-labelledby="promo-heading">
+        <h2 id="promo-heading">Featured Promotion</h2>
         <p>
-          This popup appears immediately and interrupts the user with bright
-          color, movement, tiny text, and distracting content.
+          Explore limited-time discounts and curated product recommendations.
         </p>
-        <button className="smallButton">X</button>
-      </div>
+      </section>
+
+      <section className="announcement">
+        <p>
+          Promotions update regularly. Browse categories to find current
+          discounts.
+        </p>
+      </section>
 
       <div className="container">
-        <div className="shakeBox">
-          WARNING! THIS BOX IS SHAKING CONTINUOUSLY!
-        </div>
-
-        <h1 className="allCaps">
-          THIS IS A VERY LONG ALL CAPS HEADING DESIGNED TO BE HARD TO READ AND
-          VISUALLY OVERWHELMING
-        </h1>
-
-        <p className="denseText">
-          This is a deliberately dense paragraph created for testing the CalmUX
-          neurodivergent accessibility rule set. The text is long, tightly
-          packed, and difficult to scan. It does not use enough line spacing,
-          and the container is far too wide for comfortable reading. Users with
-          ADHD, dyslexia, autism, or sensory sensitivity may find this kind of
-          content tiring because there are no clear breaks, no proper visual
-          grouping, no calm structure, and no predictable reading rhythm. This
-          paragraph continues with unnecessary details, repeated ideas, and
-          overloaded information to create a test case where the system should
-          detect dense text blocks and overly wide reading lines.
-        </p>
-
-        <p className="tinyText">
-          This text is intentionally too small. It should trigger the small text
-          rule because the font size is below the recommended readable size.
-        </p>
-
-        <section>
-          <h2 className="neonTitle">Hidden and Small Interaction Test</h2>
-
-          <div className="fakeButton">Go</div>
-          <div className="fakeButton">Buy</div>
-          <button className="smallButton">OK</button>
-          <button className="smallButton">Yes</button>
+        <section className="noticeBox">
+          <h2>Shopping Notice</h2>
+          <p>
+            Review featured deals and product updates in a distraction-free
+            layout.
+          </p>
         </section>
 
-        <section>
-          <h2 className="redTitle">Autoplay Media Test</h2>
+        <section className="contentSection">
+          <h2>Welcome to Mega Deal Zone</h2>
 
-          <video className="badMedia" autoPlay muted>
+          <p className="readableText">
+            We designed this page to provide a cleaner and more predictable
+            experience for all users. Content is spaced clearly, text is easier
+            to read, and interactions are easier to understand. Users who
+            prefer reduced stimulation can comfortably browse products without
+            flashing banners, unexpected motion, or overwhelming visual noise.
+          </p>
+
+          <p className="readableText">
+            Product information is grouped into simple sections with improved
+            spacing, readable font sizes, and narrower reading widths to reduce
+            eye strain and improve focus.
+          </p>
+        </section>
+
+        <section className="interactionSection">
+          <h2>Quick Actions</h2>
+
+          <div className="buttonGroup">
+            <button className="primaryButton">Browse Deals</button>
+            <button className="secondaryButton">View Products</button>
+            <button className="secondaryButton">Learn More</button>
+          </div>
+        </section>
+
+        <section className="mediaSection">
+          <h2>Featured Media</h2>
+
+          <video className="media" controls>
             <source src="/sample-video.mp4" type="video/mp4" />
+            Your browser does not support video playback.
           </video>
 
-          <audio autoPlay>
+          <audio controls>
             <source src="/sample-audio.mp3" type="audio/mpeg" />
+            Your browser does not support audio playback.
           </audio>
         </section>
 
-        <section className="productGrid">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div className="productCard" key={item}>
-              <h3>Product {item}</h3>
-              <p>
-                Bright animated product card with tiny text, neon color, poor
-                spacing, and distracting movement.
-              </p>
-              <button className="smallButton">Buy</button>
-            </div>
-          ))}
+        <section className="productSection">
+          <h2>Featured Products</h2>
+
+          <div className="productGrid">
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <article className="productCard" key={item}>
+                <h3>Product {item}</h3>
+
+                <p>
+                  A featured product with improved spacing, readable text, and
+                  accessible interaction patterns.
+                </p>
+
+                <button className="primaryButton">
+                  View Product
+                </button>
+              </article>
+            ))}
+          </div>
         </section>
       </div>
 
-      <footer className="badFooter">
-        MEGA DEAL ZONE TEST PAGE - INTENTIONALLY BAD DESIGN FOR CALMUX TESTING
+      <footer className="footer">
+        <p>© 2026 Mega Deal Zone. All rights reserved.</p>
       </footer>
     </main>
   );
