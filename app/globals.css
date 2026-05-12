@@ -12,13 +12,15 @@ body {
   background: #f8f9fb;
   color: #222;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 main {
   min-height: 100vh;
 }
 
-/* Header */
+/* ---------- Header ---------- */
+
 .header {
   background: #ffffff;
   border-bottom: 1px solid #dcdcdc;
@@ -27,19 +29,23 @@ main {
 }
 
 .header h1 {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 20ch;
   font-size: 2rem;
   line-height: 1.5;
   color: #1f2937;
 }
 
 .subtitle {
-  margin-top: 0.5rem;
+  margin: 0.75rem auto 0;
+  max-width: 60ch;
   font-size: 1rem;
+  line-height: 1.7;
   color: #4b5563;
 }
 
-/* Navigation */
+/* ---------- Navigation ---------- */
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -62,90 +68,104 @@ main {
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 .nav a:hover,
 .nav a:focus {
   background: #e5e7eb;
-  outline: none;
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
-/* Banner */
-.banner {
-  background: #e8f1ff;
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
-
-.banner h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  line-height: 1.5; /* FIXED */
-  color: #1f2937;
-}
-
-.banner p {
-  margin: 0 auto;
-  max-width: 65ch;
-  font-size: 1rem;
-}
-
-/* Announcement */
-.announcement {
-  background: #f4f4f5;
-  padding: 1rem;
-  text-align: center;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
+/* ---------- Layout ---------- */
 
 .container {
   width: 100%;
-  max-width: 800px;
+  max-width: 680px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
-/* Sections */
+/* Keep all sections within readable width */
+.banner,
+.announcement,
 .contentSection,
 .interactionSection,
 .mediaSection,
 .productSection,
 .noticeBox {
+  width: 100%;
+  max-width: 68ch;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+}
+
+/* ---------- Typography ---------- */
+
+h1,
+h2,
+h3 {
+  color: #111827;
+  line-height: 1.5; /* accessibility fix */
+  max-width: 28ch;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+/* FIX: readable line lengths */
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Extra-safe readable paragraphs */
+.readableText {
+  max-width: 60ch;
+  margin-bottom: 1rem;
 }
 
 .noticeBox {
   background: #f9fafb;
 }
 
-h1,
-h2,
-h3 {
-  color: #111827;
-  line-height: 1.5; /* FIXED: minimum 1.5x */
+.banner {
+  background: #e8f1ff;
+  text-align: center;
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.7;
+.banner h2 {
+  margin-bottom: 0.75rem;
 }
 
-/* Fix dense + overly wide text */
-.readableText {
-  max-width: 65ch;
-  margin-bottom: 1rem;
+.announcement {
+  background: #f4f4f5;
+  text-align: center;
 }
 
-/* Buttons */
+/* ---------- Buttons ---------- */
+
 .buttonGroup {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 }
 
 button {
@@ -156,6 +176,7 @@ button {
   border: none;
   padding: 0.75rem 1.25rem;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 .primaryButton {
@@ -171,9 +192,12 @@ button {
 button:hover,
 button:focus {
   opacity: 0.95;
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
-/* Media */
+/* ---------- Media ---------- */
+
 .media {
   width: 100%;
   max-width: 100%;
@@ -181,11 +205,23 @@ button:focus {
   margin-bottom: 1rem;
 }
 
-/* Product Grid */
+audio,
+video {
+  width: 100%;
+}
+
+/* ---------- Product Grid ---------- */
+
 .productGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .productCard {
@@ -195,24 +231,32 @@ button:focus {
   padding: 1rem;
 }
 
-.productCard p {
-  max-width: 40ch;
+.productCard h3 {
+  margin-top: 0;
 }
 
-/* Footer */
+.productCard p {
+  max-width: 38ch;
+}
+
+/* ---------- Footer ---------- */
+
 .footer {
   background: #eef2f7;
+  border-top: 1px solid #dcdcdc;
   padding: 1.5rem;
   text-align: center;
-  border-top: 1px solid #dcdcdc;
 }
 
 .footer p {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 50ch;
   font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-/* Respect reduced motion */
+/* ---------- Reduced Motion ---------- */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
